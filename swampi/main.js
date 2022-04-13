@@ -11,7 +11,7 @@ const getResidents = (evt) => {
                     .then(res => {
                         const newEle = document.createElement('h2');
                         newEle.textContent = res.data.name;
-                        document.querySelector('div').appendChild(newEle);
+                        document.querySelector('section').appendChild(newEle);
                     })
                     .catch(err => {
                         console.log(err)
