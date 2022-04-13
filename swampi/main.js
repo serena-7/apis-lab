@@ -1,8 +1,16 @@
 const getBtn = document.querySelector('button');
 const baseURL = 'https://swapi.dev/api'
 
+const clearResidents = () => {
+    const oldResidents = document.querySelectorAll('section>h2');
+    for(let i = 0; i < oldResidents.length; i++){
+        oldResidents[i].remove();
+    }
+}
+
 const getResidents = (evt) => {
     console.log('button clicked')
+    clearResidents();
     axios.get(`${baseURL}/planets?search=alderaan`)
         .then(res => {
             const residentsURLs = res.data.results[0].residents;
